@@ -1,6 +1,8 @@
 <<<<<<<<<<<<<<json接口示例>>>>>>>>>>>>>
 # TVBox
 
+本项目fork自 https://github.com/q215613905/TVBoxOS
+
 === Source Code - Editing the app default settings ===
 
     //searchable:搜索开关	        0:关闭 1:启用
