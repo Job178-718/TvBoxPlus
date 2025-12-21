@@ -1,5 +1,4 @@
-<<<<<<<<<<<<<<json接口示例>>>>>>>>>>>>>
-# TVBox
+# TVBoxPlus
 
 本项目fork自 https://github.com/q215613905/TVBoxOS
 
