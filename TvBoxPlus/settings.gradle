@@ -1,0 +1,5 @@
+rootProject.name = "TVBoxPlus"
+include ':app'
+include ':player'
+include ':quickjs'
+include ':pyramid'
