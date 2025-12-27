@@ -3,6 +3,7 @@ package com.github.tvbox.osc.ui.activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -114,6 +115,9 @@ public class SettingActivity extends BaseActivity {
         currentLiveApi = Hawk.get(HawkConfig.LIVE_API_URL, "");
         List<String> sortList = new ArrayList<>();
         sortList.add("设置其他");
+        for (int i = 0; i < sortList.size(); i++){
+            Log.d("initData", "initData: "+sortList.get( i));
+        }
         sortAdapter.setNewData(sortList);
         initViewPager();
     }

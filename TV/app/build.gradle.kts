@@ -58,4 +58,5 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
     //noinspection UseTomlInstead,GradleDependency
     implementation("androidx.navigation:navigation-compose:2.8.9")
+    implementation("com.orhanobut:hawk:2.0.1")
 }
