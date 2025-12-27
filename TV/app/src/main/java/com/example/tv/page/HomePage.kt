@@ -91,16 +91,12 @@ fun HomePage(navController: NavHostController) {
                     navController.navigate(Router.ROUTER_SETTING.name)
                 }
             }
-
         }
         Row(
             modifier = Modifier
                 .fillMaxWidth()
                 .fillMaxHeight(0.4f)
         ) {
-
-        }
-        Row {
 
         }
     }
