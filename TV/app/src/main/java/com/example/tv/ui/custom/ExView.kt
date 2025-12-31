@@ -18,7 +18,7 @@ import kotlinx.coroutines.delay
 
 @Composable
 fun CustomToast(message: String,show: Boolean) {
-    val toast = remember { mutableStateOf(true) }
+    val toast = remember { mutableStateOf(show) }
     // 显示提示
     Log.d("CustomToast", "CustomToast: ${toast.value}")
     if (toast.value) {

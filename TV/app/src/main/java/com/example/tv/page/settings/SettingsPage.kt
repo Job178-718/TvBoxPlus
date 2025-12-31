@@ -1,5 +1,6 @@
 package com.example.tv.page.settings
 
+import CustomToast
 import android.annotation.SuppressLint
 import android.util.Log
 import androidx.compose.foundation.BorderStroke
@@ -121,17 +122,13 @@ fun ConfigurationPager(pager: String,settingsModel: SettingsViewModel) {
 //            text = pager,
 //            fontSize = 20.sp,
 //        )
-        SourceEditView("视频源",HawkConfig.API_URL){ url ->
-            settingsModel.updateToast("保存成功")
-        }
-        SourceEditView("直播源",""){
-            settingsModel.updateToast("保存成功")
-        }
+        SourceEditView("视频源",HawkConfig.API_URL)
+        SourceEditView("直播源","")
     }
 }
 
 @Composable
-fun SourceEditView(text: String,map:String,sourceListener: (String)->Unit = {}){
+fun SourceEditView(text: String,map:String){
     var editText by remember{ mutableStateOf(Hawk.get<String>(map)?:"")}
     Column(
         modifier = Modifier
@@ -180,7 +177,7 @@ fun SourceEditView(text: String,map:String,sourceListener: (String)->Unit = {}){
                 value = editText,
                 onValueChange = {
                     editText = it
-                    Hawk.put(map,editText)
+
                 }
             )
             Spacer(
@@ -200,8 +197,7 @@ fun SourceEditView(text: String,map:String,sourceListener: (String)->Unit = {}){
                     )
                     .padding(10.dp)
                     .clickable {
-                        sourceListener.invoke(editText)
-
+                        Hawk.put(map,editText)
                     }
 
             )
