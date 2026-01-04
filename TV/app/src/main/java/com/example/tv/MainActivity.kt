@@ -1,6 +1,5 @@
 package com.example.tv
 
-import CustomToast
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
@@ -14,13 +13,12 @@ import androidx.compose.animation.fadeOut
 import androidx.compose.animation.scaleIn
 import androidx.compose.animation.scaleOut
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.example.tv.page.HomePage
-import com.example.tv.page.Router
-import com.example.tv.page.settings.SettingsPage
+import com.example.tv.ui.page.HomePage
+import com.example.tv.ui.page.Router
+import com.example.tv.ui.page.settings.SettingsPage
 import com.example.tv.viewmodel.SettingsViewModel
 
 class MainActivity : ComponentActivity() {

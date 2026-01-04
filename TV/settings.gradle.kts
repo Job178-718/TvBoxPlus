@@ -8,6 +8,9 @@ pluginManagement {
             }
         }
         mavenCentral()
+        maven { url = uri("https://jitpack.io") }
+        maven { url = uri("https://maven.aliyun.com/repository/releases") }
+        maven { url = uri("https://maven.aliyun.com/repository/public") }
         gradlePluginPortal()
     }
 }
@@ -16,8 +19,15 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { url = uri("https://jitpack.io") }
+        maven { url = uri("https://maven.aliyun.com/repository/releases") }
+        maven { url = uri("https://maven.aliyun.com/repository/public") }
     }
 }
 
 rootProject.name = "TV"
 include(":app")
+include(":quickjs")
+include(":player")
+project(":quickjs").projectDir = File(rootDir, "quickjs/")
+project(":player").projectDir = File(rootDir, "player/")
