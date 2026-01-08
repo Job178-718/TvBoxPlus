@@ -35,6 +35,7 @@ import androidx.compose.ui.unit.sp
 import com.example.tv.R
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
+import androidx.compose.ui.unit.em
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.tv.ui.theme.Border

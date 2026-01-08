@@ -29,21 +29,21 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            NavigationController(settingsModel)
+            NavigationController(settingsModel,this)
         }
     }
 }
 
 
 @Composable
-fun NavigationController(settingsModel: SettingsViewModel) {
+fun NavigationController(settingsModel: SettingsViewModel, activity: ComponentActivity) {
     val navController = rememberNavController()
     val backDispatcher = LocalOnBackPressedDispatcherOwner.current?.onBackPressedDispatcher
     // 添加返回按键监听
     backDispatcher?.addCallback {
         if (navController.currentDestination?.route == Router.ROUTER_HOME.name) {
             // 在首页时的处理逻辑
-            Log.d("NavigationController", "首页返回按键")
+            activity.finish()
             //两次返回退出应用
         } else {
             navController.popBackStack()

@@ -21,7 +21,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-import me.jessyan.autosize.utils.AutoSizeUtils;
+//import me.jessyan.autosize.utils.AutoSizeUtils;
 
 /**
  * 图片工具
@@ -101,7 +101,7 @@ public class ImgUtil {
         }
         int width = 180, height = 240; // 设定图片大小
         int randomColor = getRandomColor();
-        float cornerRadius = AutoSizeUtils.mm2px(App.getInstance(), 5); // 圆角半径
+        //float cornerRadius = AutoSizeUtils.mm2px(App.getInstance(), 5); // 圆角半径
 
         Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(bitmap);
@@ -110,7 +110,7 @@ public class ImgUtil {
         paint.setColor(randomColor);
         paint.setStyle(Paint.Style.FILL);
         RectF rectF = new RectF(0, 0, width, height);
-        canvas.drawRoundRect(rectF, cornerRadius, cornerRadius, paint);
+        //canvas.drawRoundRect(rectF, cornerRadius, cornerRadius, paint);
         paint.setColor(Color.WHITE); // 文字颜色
         paint.setTextSize(50); // 文字大小
         paint.setTextAlign(Paint.Align.CENTER);
