@@ -86,6 +86,10 @@ android {
 //        additionalParameters += '--set-max-idx-number=48000'
 //        additionalParameters += '--minimal-main-dex'
 //    }
+    // 修改为使用viewBinding的项目
+    buildFeatures {
+        viewBinding true
+    }
 }
 
 repositories {

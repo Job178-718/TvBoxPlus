@@ -15,6 +15,7 @@ import android.view.View;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.PermissionChecker;
+import androidx.viewbinding.ViewBindings;
 
 import com.github.tvbox.osc.R;
 import com.github.tvbox.osc.callback.EmptyCallback;
@@ -39,8 +40,10 @@ import xyz.doikki.videoplayer.util.CutoutUtil;
  * @description:
  */
 public abstract class BaseActivity extends AppCompatActivity implements CustomAdapt {
+
     protected Context mContext;
     private LoadService mLoadService;
+
 
     private static float screenRatio = -100.0f;
 
@@ -58,12 +61,25 @@ public abstract class BaseActivity extends AppCompatActivity implements CustomAd
             th.printStackTrace();
         }
         super.onCreate(savedInstanceState);
-        setContentView(getLayoutResID());
+        initContentView();
         mContext = this;
         CutoutUtil.adaptCutoutAboveAndroidP(mContext, true);//设置刘海
         AppManager.getInstance().addActivity(this);
         init();
     }
+
+    private void initContentView() {
+        if(getViewBindings()!=null){
+            setContentView(getViewBindings());
+        }else{
+            setContentView(getLayoutResID());
+        }
+    }
+
+    protected View getViewBindings() {
+        return null;
+    }
+
 
     @Override
     protected void onResume() {
